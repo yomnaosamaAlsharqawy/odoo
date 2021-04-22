@@ -1,0 +1,56 @@
+<odoo>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="school.system_list">
+      <field name="name">system list</field>
+      <field name="model">school.systems</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="subject_id"/>
+            <field name="student_id"/>
+            <field name="year"/>
+            <field name="grade"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="school.system_form_view">
+      <field name="name">system</field>
+      <field name="model">school.systems</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="subject_id"/>
+                    <field name="student_id"/>
+                    <field name="year"/>
+                    <field name="grade"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="school.system_action_window">
+      <field name="name">school system</field>
+      <field name="res_model">school.systems</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+
+<!-- <menuitem name="School_Subjects" id="school.menu_2" parent="school.menu_root"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="systems List" id="school.system" parent="school.menu_root"
+              action="school.system_action_window"/>
+
+
+</odoo>
